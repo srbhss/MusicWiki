@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MusicWki</string>
+    <string name="button">Pop</string>
+    <string name="title">musicwiki</string>
+    <string name="genre_choice_text">Choose a genre to start with</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="title_activity_genre_detail">GenreDetail</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+</resources>
