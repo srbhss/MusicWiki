@@ -35,11 +35,18 @@ class Details : AppCompatActivity() {
             override fun onSuccess(code: Int, headers: Array<Header?>?, body: JSONObject) {
                 try {
                     val detailObject = body.getJSONObject(type)
-                    detailTextView.text = if (type == "track" || type == "album") {
-                        detailObject.getJSONObject("wiki").getJSONObject("content").toString()
-                    } else {
+                    detailTextView.text = if (type == "artist") {
                         detailObject.getJSONObject("bio").getJSONObject("content").toString()
+                    } else {
+                        detailObject.getJSONObject("wiki").getJSONObject("content").toString()
                     }
+                    nameTextView.setBackgroundResource(
+                        if (type == "track") {
+                            detailObject.getJSONObject("album").getJSONArray("image")[0] as Int
+                        } else {
+                            detailObject.getJSONArray("image")[0] as Int
+                        }
+                    )
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
